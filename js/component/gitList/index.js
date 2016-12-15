@@ -14,30 +14,30 @@ class GitList extends Component {
         super(props);
     }
   
-    // getList() {
-    //     if(githubStore.githubList.length > 0) {
-    //         return githubStore.githubList.map((item, index) => {
-    //             return (
-                    
-    //                 <ListItem>{githubStore.githubList[{index}].full_name } </ListItem>
-    //             )
-    //         });
-    //     } else {   
-    //         return ( 
-    //             <Text 
-    //         style={{alignSelf: 'center', justifyContent: 'center', marginTop: 10, fontWeight: 'bold', fontSize: 25, color: "#999"}}>
-    //         Begin Your Search</Text> 
-    //     )
-    //      }
+    getList() {
+        console.log(githubStore.githubList.length);
+        if(githubStore.githubList.length > 0) {
+            return githubStore.githubList.map((items, index) => {
+                return ( 
+                    <ListItem><Text>{items.owner.url}</Text></ListItem>
+                   )
+            });
+        } else {   
+            return ( 
+                <Text 
+            style={{alignSelf: 'center', justifyContent: 'center', marginTop: 10, fontWeight: 'bold', fontSize: 25, color: "#999"}}>
+            Begin Your Search</Text> 
+        )
+         }
 
-    // }
+    }
 
     render() {
         console.log(githubStore);
         return (
             <View>
                 <List style={{marginLeft:15 , marginRight:20}}>
-                  <ListItem><Text> {githubStore.githubList.total_count}</Text></ListItem>
+                  {this.getList()}
                 </List>
             </View>
         );

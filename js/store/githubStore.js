@@ -18,7 +18,6 @@ class GithubStore {
 
 
  fetchData(searchString) {
-		//add searchString to url and then search it
     console.log(searchString);
     const url = "https://api.github.com/search/repositories?q="+searchString;
     let count;
@@ -26,7 +25,7 @@ class GithubStore {
     fetch(url)
       .then((response) => response.json())
       .then((responseJson) => {
-        this.githubList = responseJson;
+        this.githubList = responseJson.items;
          //this.count=responseJson.total_count ; 
         // return 
         //     this.githubList = responseJson.items;
