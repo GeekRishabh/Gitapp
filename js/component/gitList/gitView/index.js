@@ -9,16 +9,7 @@ import todoStore from '../../../store/githubStore';
 export default class GitView extends Component {
 
     
-    toggleTodo() {
-        console.log(this.props.todo.completed, 'oooooo');
-        // Alert.alert('Are you sure to mark the item ');
-        todoStore.toggleTodo(this.props.todo.id);
-    }
-
-    deleteTodo() {
-        // Alert.alert('Are you sure to delete the item');
-        todoStore.deleteTodo(this.props.todo.id);
-    }   
+    
 
     render() {
         return (

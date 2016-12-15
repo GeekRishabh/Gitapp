@@ -5,6 +5,7 @@ import {observer} from 'mobx-react/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import githubStore from './js/store/githubStore';
+import GitList from './js/component/gitList';
 
 @observer
 export default class Gitapp extends Component {
@@ -54,7 +55,7 @@ export default class Gitapp extends Component {
                    </TouchableHighlight>
                 <View style={{borderBottomColor: "#aaa", borderBottomWidth: 1, marginTop: 20}} />
                
-
+               <GitList store={githubStore} />
             </Content>
             <Footer>
                 
