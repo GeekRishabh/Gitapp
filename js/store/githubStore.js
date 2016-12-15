@@ -20,11 +20,14 @@ class GithubStore {
  fetchData(searchString) {
 		//add searchString to url and then search it
     console.log(searchString);
-    return fetch("https://api.github.com/search/repositories?q={searchString}")
+    const url = "https://api.github.com/search/repositories?q="+searchString;
+    fetch(url)
       .then((response) => response.json())
       .then((responseJson) => {
-        return responseJson.items;
-        //console.log(responseJson.items);
+        this.githubList = responseJson.items;
+        // return 
+        //     this.githubList = responseJson.items;
+         console.log(responseJson);
       });
       
   }
